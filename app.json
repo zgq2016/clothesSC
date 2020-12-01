@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/The_production_files/index",
+    "pages/homePage/index",
+    "pages/The_production_order/index",
+    "pages/designFile/index",
+    "pages/functionality/index",
+    "pages/mine/index",
+    "pages/work/index",
+    "pages/login/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,128 @@
+<tabBar></tabBar>
+<view wx:if="{{homepage}}">
+  <view class="design_style" wx:if="{{Z7000}}">
+    <view class="The_design_style">
+      <view class="name">
+        <view>生产下单</view>
+        <view></view>
+      </view>
+    </view>
+    <view wx:if='{{style_list.length==0}}'>暂无数据</view>
+    <view class="main">
+      <view class="style_list">
+        <view class="list" wx:for='{{production_order_list}}' wx:key='id'>
+          <view class="img">
+            <image mode='aspectFill' src="{{item.style_pic_url}}" />
+          </view>
+          <view class="con">
+            <view class="name">{{item.stylename}}</view>
+            <view class="username">
+              <view>{{item.style_type}}</view>
+              <view>{{item.user_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="design_style" wx:if="{{Z8000}}">
+    <view class="The_design_style">
+      <view class="name">
+        <view>生产采购</view>
+        <view></view>
+      </view>
+    </view>
+    <view wx:if='{{style_pattern_list.length==0}}'>暂无数据</view>
+    <view class="main">
+      <view class="style_list">
+        <view class="list" wx:for='{{Production_procurement_list}}' wx:key='id'>
+          <view class="img">
+            <image mode='aspectFill' src="{{item.style_pic_url}}" />
+          </view>
+          <view class="con">
+            <view class="name">{{item.stylename}}</view>
+            <view class="username">
+              <view>{{item.style_type}}</view>
+              <view>{{item.user_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="design_style" wx:if="{{Z9000}}">
+    <view class="The_design_style">
+      <view class="name">
+        <view>生产排单</view>
+        <view></view>
+      </view>
+    </view>
+    <view wx:if='{{style_sample_list.length==0}}'>暂无数据</view>
+    <view class="main">
+      <view class="style_list">
+        <view class="list" wx:for='{{production_arranged_list}}' wx:key='id'>
+          <view class="img">
+            <image mode='aspectFill' src="{{item.style_pic_url}}" />
+          </view>
+          <view class="con">
+            <view class="name">{{item.stylename}}</view>
+            <view class="username">
+              <view>{{item.style_type}}</view>
+              <view>{{item.user_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="design_style" wx:if="{{Z10000}}">
+    <view class="The_design_style">
+      <view class="name">
+        <view>裁剪</view>
+        <view></view>
+      </view>
+    </view>
+    <view wx:if='{{style_sample_list.length==0}}'>暂无数据</view>
+    <view class="main">
+      <view class="style_list">
+        <view class="list" wx:for='{{tailor_list}}' wx:key='id'>
+          <view class="img">
+            <image mode='aspectFill' src="{{item.style_pic_url}}" />
+          </view>
+          <view class="con">
+            <view class="name">{{item.stylename}}</view>
+            <view class="username">
+              <view>{{item.style_type}}</view>
+              <view>{{item.user_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="design_style" wx:if="{{Z11000}}">
+    <view class="The_design_style">
+      <view class="name">
+        <view>生产出货</view>
+        <view></view>
+      </view>
+    </view>
+    <view wx:if='{{style_sample_list.length==0}}'>暂无数据</view>
+    <view class="main">
+      <view class="style_list">
+        <view class="list" wx:for='{{Production_shipments_list}}' wx:key='id'>
+          <view class="img">
+            <image mode='aspectFill' src="{{item.style_pic_url}}" />
+          </view>
+          <view class="con">
+            <view class="name">{{item.stylename}}</view>
+            <view class="username">
+              <view>{{item.style_type}}</view>
+              <view>{{item.user_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

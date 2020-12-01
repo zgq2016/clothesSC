@@ -1,0 +1,21 @@
+<tabBar></tabBar>
+<view class="functionality">
+  <!-- 
+    <view class="supplier" bindtap="go_supplier">
+    <view class="supplier_img"></view>
+    <view class="supplier_con">供应商</view>
+  </view>
+  <view class="materialProcess" bindtap="go_materialProcess">
+    <view class="materialProcess_img"></view>
+    <view class="materialProcess_con">物料工艺卡</view>
+  </view>
+-->
+  <view class="project" bindtap="go_production_order">
+    <view class="project_img"></view>
+    <view class="project_con">生产下单</view>
+  </view>
+  <view class="project" bindtap="go_designFile">
+    <view class="project_img"></view>
+    <view class="project_con">款式档案</view>
+  </view>
+</view>

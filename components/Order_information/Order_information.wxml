@@ -1,0 +1,39 @@
+<view>
+  <view class="add_form">
+    <view class="form">
+      <view class="select">
+        <picker bindchange="bindCustomerSelect" value="{{customer_id}}" range="{{customer_select}}"
+          range-key='companyname'>
+          <view class="picker">
+            <text class="name">客户</text>
+            <view class="con">
+              <view wx:if='{{!customer_id}}' style="color: #808080;">
+                {{'客户'}}
+              </view>
+              <view wx:if='{{customer_id}}'>
+                {{companyname}}
+              </view>
+              <view class="iconfont icon-icon-test3"></view>
+            </view>
+          </view>
+        </picker>
+      </view>
+      <view class="value">
+        <text class="name">颜色</text>
+        <view>红色</view>
+      </view>
+      <view class="input">
+        <text class="name">总量</text>
+        <input type="number" placeholder="总量" />
+      </view>
+      <view class="size" bindtap='go_get_size'>
+        <text class="name">尺码</text>
+        <view class="con">
+          <view style="color: #808080;">尺码</view>
+          <view class="iconfont icon-icon-test3"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view></view>
