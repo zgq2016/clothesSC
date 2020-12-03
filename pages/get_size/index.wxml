@@ -1,0 +1,33 @@
+<view>
+  <view class="bom">
+    <view class="tit">请选择尺码</view>
+    <view class="con">
+      <view wx:for='{{sizes}}' wx:key='id'>
+        <checkbox-group bindchange='handleCheck' data-item="{{item}}">
+          <checkbox class="assist_list">{{item.size_name}}</checkbox>
+        </checkbox-group>
+      </view>
+    </view>
+  </view>
+  <view class="border"></view>
+  <view class="top">
+    <view class="size_tit">
+      <view class="size">尺码</view>
+      <view class="num">比例</view>
+      <view class="num">数量</view>
+    </view>
+    <view wx:for='{{sizes}}' wx:key='id'>
+      <view class="size_list" wx:if='{{item.checked}}'>
+        <view class="size">{{item.size_name}}</view>
+        <view class="num">
+          <input bindinput='get_ratio' data-index="{{index}}" value="{{item.ratio}}" placeholder="请输入" type="number" />
+        </view>
+        <view class="num">
+          <input placeholder="请输入" value="{{item.quantity}}" disabled />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="next_step" bindtap='next_step'>确定</view>
+</view>

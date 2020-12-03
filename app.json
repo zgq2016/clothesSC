@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/The_production_files/index",
+    "pages/sc_Order_information/index",
+    "pages/get_size/index",
     "pages/homePage/index",
     "pages/The_production_order/index",
     "pages/designFile/index",

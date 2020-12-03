@@ -2,5 +2,5 @@
   "usingComponents": {
     "Order_information": "../../components/Order_information/Order_information"
   },
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "生产下单"
 }

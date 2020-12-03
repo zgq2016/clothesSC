@@ -3,10 +3,10 @@
 .add_form {
   width: 100vw;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     .icon-icon-test3 {
       display: flex;
       justify-content: center;
@@ -72,5 +72,49 @@
         height: 100rpx;
       }
     }
+    .sizes_list {
+      display: flex;
+      .con {
+        width: 100rpx;
+      }
+      .list {
+        view {
+          width: 100rpx;
+        }
+      }
+    }
   }
+  .bom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100rpx;
+    padding: 0 20rpx;
+    .select {
+      .picker {
+        width: 200rpx;
+        height: 60rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ccc;
+      }
+    }
+    .btn {
+      width: 200rpx;
+      height: 60rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ccc;
+    }
+  }
+}
+
+.border {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  border-top: 10px solid #ccc;
 }

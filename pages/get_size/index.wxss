@@ -1,0 +1,85 @@
+.top {
+  background-color: #fff;
+}
+.top .size_tit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.top .size_tit .size {
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top .size_tit .num {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top .size_list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.top .size_list .size {
+  width: 150rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top .size_list .num {
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top .size_list .num input {
+  width: 200rpx;
+  height: 80rpx;
+  background-color: #ccc;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+}
+.bom {
+  width: 100vw;
+  background-color: #fff;
+  color: #000;
+}
+.bom .tit {
+  font-size: 30rpx;
+  margin: 0 20rpx;
+}
+.bom .con {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bom .con view .assist_list {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 40rpx;
+  transform: scale(0.6, 0.6);
+}
+.border {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  border-top: 10px solid #ccc;
+}
+.next_step {
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
