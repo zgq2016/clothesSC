@@ -35,11 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    order: {
-      total: "",
-      customer_id: "",
-      companyname: "",
-      sizes: [],
-    },
+    produce_order: [],
   },
 });

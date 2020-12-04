@@ -6,26 +6,12 @@ Component({
     data: {
       type: Object,
       value: "",
-      observer: function (e) {},
+      observer: function () {},
     },
   },
-  data: {
-    customer_select: [], //客户
-    total: "", //总量
-    sizes: [],
-    sizes_length: "",
-    add_form: {},
-  },
+  data: { produce_order: [], colors: [], customer_select: [] },
   pageLifetimes: {
     show: function () {
-      this.setData({
-        sizes: app.globalData.order.sizes,
-        sizes_length: app.globalData.order.sizes.length,
-        add_form: {
-          produce_order: [],
-        },
-      });
-      // getApp().globalData.order.sizes = this.data.claim_num;
       this.get_customer(); //客户
       this.color_init(); //颜色
     },
@@ -33,36 +19,57 @@ Component({
     resize: function () {},
   },
   methods: {
-    Confirm_the_order_edit() {},
-    go_get_size() {
-      navigateTo(`/pages/get_size/index`);
+    Confirm_the_order_edit() {
+      console.log(this.data.produce_order);
+    },
+    go_get_size(e) {
+      let index = e.currentTarget.dataset.index;
+      navigateTo(`/pages/get_size/index?index=${index}`);
     },
     get_total(e) {
       // 选择总量
-      this.setData({ total: e.detail.value });
-      getApp().globalData.order.total = this.data.total;
+      let index = e.currentTarget.dataset.index;
+      this.data.produce_order.map((v, i) => {
+        if (index == i) {
+          v.total = e.detail.value;
+        }
+      });
+      this.setData({ produce_order: this.data.produce_order });
+    },
+    bindDateChange: function (e) {
+      // 出货时间
+      let index = e.currentTarget.dataset.index;
+      this.data.produce_order.map((v, i) => {
+        if (index == i) {
+          v.expect_date = e.detail.value;
+        }
+      });
+      this.setData({ produce_order: this.data.produce_order });
     },
     bindCustomerSelect(e) {
       // 选择客户
-      this.setData({
-        customer_id: this.data.customer_select[e.detail.value].id,
-        companyname: this.data.customer_select[e.detail.value].companyname,
+      let index = e.currentTarget.dataset.index;
+      this.data.produce_order.map((v, i) => {
+        if (index == i) {
+          v.customer_id = this.data.customer_select[e.detail.value].id;
+          v.companyname = this.data.customer_select[e.detail.value].companyname;
+        }
       });
-      getApp().globalData.order.customer_id = this.data.customer_id;
-      getApp().globalData.order.companyname = this.data.companyname;
+      this.setData({ produce_order: this.data.produce_order });
     },
     bindColorSelect(e) {
-      this.data.add_form.produce_order.push({
+      // 增加颜色
+      this.data.produce_order.push({
         customer_id: "",
         companyname: "",
         expect_date: "",
-        id: 0,
-        produce_no: this.data.data.produce_no,
         style_color_name: this.data.colors[e.detail.value].style_color_name,
+        total: "",
         produce_order_size: [],
         style_id: this.data.data.style_id,
-        total: "",
+        produce_no: this.data.data.produce_no,
       });
+      this.setData({ produce_order: this.data.produce_order });
     },
     async get_customer() {
       // 获取客户
@@ -85,12 +92,11 @@ Component({
       this.setData({
         colors: res.data.data,
       });
-      console.log(this.data.colors);
     },
   },
   created: function () {},
-  attached: function () {}, // 在组件实例进入页面节点树时执行
+  attached: function () {},
   ready: function () {},
   moved: function () {},
-  detached: function () {}, // 在组件实例被从页面节点树移除时执行
+  detached: function () {},
 });

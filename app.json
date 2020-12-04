@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/aa/index",
     "pages/sc_Order_information/index",
     "pages/get_size/index",
     "pages/homePage/index",

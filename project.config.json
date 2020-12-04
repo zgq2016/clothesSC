@@ -62,7 +62,7 @@
         {
           "name": "生产下单",
           "pathName": "pages/sc_Order_information/index",
-          "query": "style_id=172& produce_no=2020112867206",
+          "query": "style_id=172&produce_no=2020112867206",
           "scene": null
         }
       ]

@@ -70,16 +70,11 @@ page {
 .add_form {
   width: 100vw;
   background-color: #fff;
-}
-.add_form .form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.add_form .form .form_con {
-  width: 710rpx;
-}
-.add_form .form .form_con .icon-icon-test3 {
+.add_form .form .icon-icon-test3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,62 +82,71 @@ page {
   transform: rotate(270deg);
   color: #000;
 }
-.add_form .form .form_con .picker {
-  width: 710rpx;
+.add_form .form .picker {
+  width: 670rpx;
   height: 100rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.add_form .form .form_con .picker .name {
+.add_form .form .picker .name {
   width: 130rpx;
   margin-right: 30rpx;
 }
-.add_form .form .form_con .picker .con {
+.add_form .form .picker .con {
   display: flex;
   align-items: center;
 }
-.add_form .form .form_con .picker .con .placeholder {
+.add_form .form .picker .con .placeholder {
   margin-right: 10rpx;
   color: #ccc;
 }
-.add_form .form .form_con .select {
+.add_form .form .select {
   border-bottom: 1rpx solid #f2f2f2;
   height: 100rpx;
 }
-.add_form .form .form_con .value {
+.add_form .form .value {
   border-bottom: 1rpx solid #f2f2f2;
-  width: 710rpx;
-  height: 100rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.add_form .form .form_con .size {
-  border-bottom: 1rpx solid #f2f2f2;
-  width: 710rpx;
+  width: 670rpx;
   height: 100rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.add_form .form .form_con .size .con {
+.add_form .form .size {
+  border-bottom: 1rpx solid #f2f2f2;
+  width: 670rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add_form .form .size .con {
   display: flex;
   align-items: center;
 }
-.add_form .form .form_con .input {
+.add_form .form .input {
   border-bottom: 1rpx solid #f2f2f2;
-  width: 710rpx;
+  width: 670rpx;
   height: 100rpx;
   display: flex;
   align-items: center;
 }
-.add_form .form .form_con .input .name {
+.add_form .form .input .name {
   width: 200rpx;
 }
-.add_form .form .form_con .input input {
+.add_form .form .input input {
   flex: 1;
   height: 100rpx;
+}
+.add_form .form .sizes_list {
+  display: flex;
+}
+.add_form .form .sizes_list .con {
+  width: 100rpx;
+}
+.add_form .form .sizes_list .list view {
+  width: 100rpx;
 }
 .add_form .bom {
   display: flex;

@@ -1,54 +1,59 @@
 <view>
   <view class="add_form">
-    <view class="form" wx:for='{{add_form.produce_order}}' wx:key='*this'>
-      <view class="select">
-        <picker bindchange="bindCustomerSelect" value="{{item.customer_id}}" range="{{customer_select}}"
-          range-key='companyname'>
-          <view class="picker">
-            <text class="name">客户</text>
-            <view class="con">
-              <view wx:if='{{!item.customer_id}}' style="color: #808080;">
-                {{'客户'}}
+    <view class="form" wx:for='{{produce_order}}' wx:key='*this'>
+      <view class="form_con">
+        <view class="select">
+          <picker bindchange="bindCustomerSelect" value="{{item.customer_id}}" range="{{customer_select}}"
+            range-key='companyname' data-index="{{index}}">
+            <view class="picker">
+              <text class="name">客户</text>
+              <view class="con">
+                <view wx:if='{{!item.customer_id}}' style="color: #808080;">
+                  {{'客户'}}
+                </view>
+                <view wx:if='{{item.customer_id}}'>
+                  {{item.companyname}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
               </view>
-              <view wx:if='{{item.customer_id}}'>
-                {{item.companyname}}
-              </view>
-              <view class="iconfont icon-icon-test3"></view>
             </view>
+          </picker>
+        </view>
+        <view class="select">
+          <picker mode="date" value="{{item.expect_date}}" bindchange="bindDateChange" data-index="{{index}}">
+            <view class="picker">
+              <text class="name">出货时间</text>
+              <view class="con">
+                <view wx:if='{{!item.expect_date}}' style="color: #808080;">
+                  {{'出货时间'}}
+                </view>
+                <view wx:if='{{item.expect_date}}'>
+                  {{item.expect_date}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="value">
+          <text class="name">颜色</text>
+          <view>{{item.style_color_name}}</view>
+        </view>
+        <view class="input">
+          <text class="name">总量</text>
+          <input type="number" placeholder="总量" value="{{item.total}}" bindinput='get_total' data-index="{{index}}" />
+        </view>
+        <view class="size" bindtap='go_get_size' data-index="{{index}}">
+          <text class="name">尺码</text>
+          <view class="con">
+            <view style="color: #808080;">尺码</view>
+            <view class="iconfont icon-icon-test3"></view>
           </view>
-        </picker>
-      </view>
-      <view class="value">
-        <text class="name">颜色</text>
-        <view>{{item.style_color_name}}</view>
-      </view>
-      <view class="input">
-        <text class="name">总量</text>
-        <input type="number" placeholder="总量" value="{{total}}" bindinput='get_total' />
-      </view>
-      <view class="size" bindtap='go_get_size'>
-        <text class="name">尺码</text>
-        <view class="con">
-          <view style="color: #808080;">尺码</view>
-          <view class="iconfont icon-icon-test3"></view>
         </view>
       </view>
-      <view class="sizes_list" wx:if='{{sizes_length}}'>
-        <view class="con">
-          <view>尺码</view>
-          <view>比例</view>
-          <view>数量</view>
-        </view>
-        <view class="list" wx:for='{{sizes}}' wx:key='id'>
-          <view wx:if='{{item.checked}}'>
-            <view>{{item.size_name}}</view>
-            <view>{{item.ratio}}</view>
-            <view>{{item.quantity}}</view>
-          </view>
-        </view>
-      </view>
+      <view class="border"></view>
     </view>
-    <view class="border"></view>
+    <!-- <view class="border"></view> -->
     <view class="bom">
       <view class="select">
         <picker bindchange="bindColorSelect" range="{{colors}}" range-key='style_color_name'>
@@ -59,5 +64,7 @@
     </view>
   </view>
 </view>
+
+
 
 <view></view>
