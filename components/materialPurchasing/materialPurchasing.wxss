@@ -144,21 +144,20 @@ page {
   flex: 1;
   height: 100rpx;
 }
-.add_form .form .form_con .sizes_list {
-  display: flex;
+.add_form .form .form_con .textarea {
+  position: relative;
+  height: 400rpx;
 }
-.add_form .form .form_con .sizes_list .con view {
-  width: 50rpx;
-  margin: 20rpx 0;
+.add_form .form .form_con .textarea textarea {
+  width: 710rpx;
+  height: 350rpx;
 }
-.add_form .form .form_con .sizes_list .list .checked {
-  width: 84rpx;
-}
-.add_form .form .form_con .sizes_list .list .checked view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20rpx 0;
+.add_form .form .form_con .textarea view {
+  height: 50rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #dfdfdf;
 }
 .add_form .form .close {
   width: 710rpx;
@@ -269,22 +268,20 @@ page {
   flex: 1;
   height: 100rpx;
 }
-.edit_form .form .form_con .sizes_list {
-  display: flex;
-  border-bottom: 1rpx solid #f2f2f2;
+.edit_form .form .form_con .textarea {
+  position: relative;
+  height: 400rpx;
 }
-.edit_form .form .form_con .sizes_list .con view {
-  width: 50rpx;
-  margin: 20rpx 0;
+.edit_form .form .form_con .textarea textarea {
+  width: 710rpx;
+  height: 350rpx;
 }
-.edit_form .form .form_con .sizes_list .list .checked {
-  width: 84rpx;
-}
-.edit_form .form .form_con .sizes_list .list .checked view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20rpx 0;
+.edit_form .form .form_con .textarea view {
+  height: 50rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #dfdfdf;
 }
 .edit_form .form .close {
   width: 710rpx;
@@ -318,30 +315,22 @@ page {
   align-items: center;
   background-color: #ccc;
 }
-.table .tableData .time {
-  padding: 10rpx 0;
-}
-.table .tableData .tableList .table_header .table_nav {
+.table {
   width: 100vw;
-  height: 60rpx;
-  text-align: center;
-  overflow: hidden;
+  background-color: #fff;
+}
+.table .table_list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.table .tableData .tableList .table_header .table_nav text {
-  flex: 1;
-  max-width: 100rpx;
-}
-.table .tableData .tableList .table_header .table_list {
-  width: 100vw;
-  height: 60rpx;
-  text-align: center;
-  overflow: hidden;
+.table .table_list .value {
+  border-bottom: 1rpx solid #f2f2f2;
+  width: 710rpx;
+  height: 100rpx;
   display: flex;
-}
-.table .tableData .tableList .table_header .table_list text {
-  flex: 1;
-  max-width: 100rpx;
+  align-items: center;
+  justify-content: space-between;
 }
 .table .next_step {
   width: 600rpx;
@@ -362,4 +351,7 @@ page {
   margin: 0;
   width: 100vw;
   border-top: 20rpx solid #ccc;
+}
+page {
+  margin-bottom: 200px;
 }

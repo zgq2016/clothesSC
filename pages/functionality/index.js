@@ -15,6 +15,20 @@ Page({
   go_production_order() {
     navigateTo(`/pages/The_production_order/index`);
   },
+  go_Production_procurement() {
+    navigateTo(`/pages/Production_procurement/index`);
+  },
+  go_production_arranged() {
+    navigateTo(`/pages/production_arranged/index`);
+  },
+  go_tailor() {
+    navigateTo(`/pages/tailor/index`);
+  },
+  go_shipment() {
+    navigateTo(`/pages/shipment/index`);
+  },
+
+
   go_designFile() {
     navigateTo(`/pages/designFile/index`);
   },

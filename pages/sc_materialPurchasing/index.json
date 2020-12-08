@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "materialPurchasing": "../../components/materialPurchasing/materialPurchasing"
+  },
+  "navigationBarTitleText": "生产排单"
+}

@@ -1,8 +1,8 @@
-<view>
+<view wx:if='{{active==1}}'>
   <view class="add_form">
-    <view class="form" wx:for='{{produce_order}}' wx:key='*this'>
+    <view class="form" wx:for='{{produce_order}}' wx:key='index'>
       <view class="form_con">
-        <view class="select">
+        <view class="select" wx:if='{{index==0}}'>
           <picker bindchange="bindCustomerSelect" value="{{item.customer_id}}" range="{{customer_select}}"
             range-key='companyname' data-index="{{index}}">
             <view class="picker">
@@ -19,7 +19,7 @@
             </view>
           </picker>
         </view>
-        <view class="select">
+        <view class="select" wx:if='{{index==0}}'>
           <picker mode="date" value="{{item.expect_date}}" bindchange="bindDateChange" data-index="{{index}}">
             <view class="picker">
               <text class="name">出货时间</text>
@@ -50,21 +50,145 @@
             <view class="iconfont icon-icon-test3"></view>
           </view>
         </view>
+        <view class="sizes_list">
+          <view class="con">
+            <view>尺码</view>
+            <view>比例</view>
+            <view>数量</view>
+          </view>
+          <view class="list" wx:for='{{item.produce_order_size}}' wx:for-item='item1' wx:for-index='index1' wx:key='index1'>
+            <view class="checked" wx:if='{{item1.checked}}'>
+              <view>{{item1.size_name}}</view>
+              <view>{{item1.ratio}}</view>
+              <view>{{item1.quantity}}</view>
+            </view>
+          </view>
+        </view>
       </view>
+      <view class="close" bindtap='add_close_edit' data-item="{{item}}" data-index="{{index}}">删除</view>
       <view class="border"></view>
     </view>
-    <!-- <view class="border"></view> -->
     <view class="bom">
       <view class="select">
         <picker bindchange="bindColorSelect" range="{{colors}}" range-key='style_color_name'>
           <view class="picker"> 增加颜色 </view>
         </picker>
       </view>
-      <view class="btn" bindtap='Confirm_the_order_edit'>确认下单</view>
+      <view class="btn" bindtap='Confirm_the_order' wx:if='{{produce_order_length>0}}'>确认下单</view>
     </view>
   </view>
 </view>
 
 
 
-<view></view>
+
+<view wx:if='{{active==0}}'>
+  <view class="table" wx:if='{{active_set==false}}'>
+    <view class="tableData">
+      <view class="time">
+        <view>出货时间: {{ expect_date }}</view>
+      </view>
+      <view class="tableList">
+        <view class="table_header">
+          <view class="table_nav">
+            <text>颜色</text>
+            <text wx:for='{{t_size}}' wx:key='id'>{{ item }}</text>
+            <text>数量</text>
+            <text>总量</text>
+          </view>
+          <view class="table_list" wx:for='{{produceOrderInfo}}' wx:key='id'>
+            <text>{{ item.style_color_name }}</text>
+            <text wx:for='{{all[index]}}' wx:for-item='item1' wx:key='id'>{{
+            item1
+          }}</text>
+            <text>{{ item.total }}</text>
+            <text>
+              <text wx:if="{{produceOrderInfo_length == index}}">{{ total }}</text>
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="next_step" bindtap='table_edit'>修改</view>
+  </view>
+
+  <view class="edit_form" wx:if='{{active_set==true}}'>
+    <view class="form" wx:for='{{produce_order}}' wx:key='index'>
+      <view class="form_con">
+        <view class="select" wx:if='{{index==0}}'>
+          <picker bindchange="bindCustomerSelect" value="{{item.customer_id}}" range="{{customer_select}}"
+            range-key='companyname' data-index="{{index}}">
+            <view class="picker">
+              <text class="name">客户</text>
+              <view class="con">
+                <view wx:if='{{!item.customer_id}}' style="color: #808080;">
+                  {{'客户'}}
+                </view>
+                <view wx:if='{{item.customer_id}}'>
+                  {{item.companyname}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="select" wx:if='{{index==0}}'>
+          <picker mode="date" value="{{item.expect_date}}" bindchange="bindDateChange" data-index="{{index}}">
+            <view class="picker">
+              <text class="name">出货时间</text>
+              <view class="con">
+                <view wx:if='{{!item.expect_date}}' style="color: #808080;">
+                  {{'出货时间'}}
+                </view>
+                <view wx:if='{{item.expect_date}}'>
+                  {{item.expect_date}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="value">
+          <text class="name">颜色</text>
+          <view>{{item.style_color_name}}</view>
+        </view>
+        <view class="input">
+          <text class="name">总量</text>
+          <input type="number" placeholder="总量" value="{{item.total}}" bindinput='get_total' data-index="{{index}}" />
+        </view>
+        <view class="size" bindtap='go_get_size' data-index="{{index}}">
+          <text class="name">尺码</text>
+          <view class="con">
+            <view style="color: #808080;">尺码</view>
+            <view class="iconfont icon-icon-test3"></view>
+          </view>
+        </view>
+        <view class="sizes_list">
+          <view class="con">
+            <view>尺码</view>
+            <view>比例</view>
+            <view>数量</view>
+          </view>
+          <view class="list" wx:for='{{item.produce_order_size}}' wx:for-item='item1' wx:for-index='index1'
+            wx:key='index1'>
+            <view class="checked" wx:if='{{item1.checked}}'>
+              <view>{{item1.size}}</view>
+              <view>{{item1.ratio}}</view>
+              <view>{{item1.quantity}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="close" bindtap='edit_close_edit' data-item="{{item}}" data-index="{{index}}">删除</view>
+      <view class="border"></view>
+    </view>
+    <view class="bom">
+      <view class="select">
+        <picker bindchange="bindColorSelect_edit" range="{{colors}}" range-key='style_color_name'>
+          <view class="picker"> 增加颜色 </view>
+        </picker>
+      </view>
+      <view class="btn" bindtap='Confirm_the_order_edit' wx:if='{{produce_order_length>0}}'>确认下单</view>
+    </view>
+  </view>
+</view>

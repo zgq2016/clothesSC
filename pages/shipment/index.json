@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabBar": "../../components/tabBar/tabBar"
+  },
+  "navigationBarTitleText": "生产出货",
+  "enablePullDownRefresh": true
+}

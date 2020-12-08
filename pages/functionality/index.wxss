@@ -1,5 +1,6 @@
 .functionality {
   display: flex;
+  flex-wrap: wrap;
 }
 .functionality .supplier {
   width: 25vw;
@@ -39,6 +40,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 20rpx 0;
 }
 .functionality .project .project_img {
   width: 100rpx;

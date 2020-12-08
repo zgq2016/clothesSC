@@ -74,24 +74,19 @@
           height: 100rpx;
         }
       }
-      .sizes_list {
-        display: flex;
-        .con {
-          view {
-            width: 50rpx;
-            margin: 20rpx 0;
-          }
+      .textarea {
+        position: relative;
+        height: 400rpx;
+        textarea {
+          width: 710rpx;
+          height: 350rpx;
         }
-        .list {
-          .checked {
-            width: 84rpx;
-            view {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin: 20rpx 0;
-            }
-          }
+        view {
+          height: 50rpx;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          color: #dfdfdf;
         }
       }
     }
@@ -205,25 +200,19 @@
           height: 100rpx;
         }
       }
-      .sizes_list {
-        display: flex;
-        border-bottom: 1rpx solid #f2f2f2;
-        .con {
-          view {
-            width: 50rpx;
-            margin: 20rpx 0;
-          }
+      .textarea {
+        position: relative;
+        height: 400rpx;
+        textarea {
+          width: 710rpx;
+          height: 350rpx;
         }
-        .list {
-          .checked {
-            width: 84rpx;
-            view {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin: 20rpx 0;
-            }
-          }
+        view {
+          height: 50rpx;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          color: #dfdfdf;
         }
       }
     }
@@ -265,39 +254,19 @@
 }
 
 .table {
-  .tableData {
-    .time {
-      padding: 10rpx 0;
-    }
-
-    .tableList {
-      .table_header {
-        .table_nav {
-          width: 100vw;
-          height: 30rpx * 2;
-          text-align: center;
-          overflow: hidden;
-          display: flex;
-
-          text {
-            flex: 1;
-            max-width: 100rpx;
-          }
-        }
-
-        .table_list {
-          width: 100vw;
-          height: 30rpx * 2;
-          text-align: center;
-          overflow: hidden;
-          display: flex;
-
-          text {
-            flex: 1;
-            max-width: 100rpx;
-          }
-        }
-      }
+  width: 100vw;
+  background-color: #fff;
+  .table_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .value {
+      border-bottom: 1rpx solid #f2f2f2;
+      width: 710rpx;
+      height: 100rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
   .next_step {
@@ -315,10 +284,12 @@
     transform: translate(-50%, 0);
   }
 }
-
 .border {
   padding: 0;
   margin: 0;
   width: 100vw;
   border-top: 10rpx * 2 solid #ccc;
+}
+page {
+  margin-bottom: 200px;
 }

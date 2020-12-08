@@ -1,0 +1,135 @@
+<view wx:if='{{active==1}}'>
+  <view class="add_form">
+    <view class="form" wx:for='{{produce_factory_order}}' wx:key='index'>
+      <view class="form_con">
+        <view class="value">
+          <text class="name">指派方式</text>
+          <view>{{item.factory_name}}</view>
+        </view>
+        <view class="select">
+          <picker bindchange="bindModesSelect" value="{{item.mode}}" range="{{item.modes}}" range-key='mode_name'
+            data-index="{{index}}">
+            <view class="picker">
+              <text class="name">指派工厂</text>
+              <view class="con">
+                <view wx:if='{{!item.mode}}' style="color: #808080;">
+                  {{'指派工厂'}}
+                </view>
+                <view wx:if='{{item.mode}}'>
+                  {{item.mode_name}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="input">
+          <text class="name">指派数量</text>
+          <input type="number" placeholder="指派数量" value="{{item.quantity}}" bindinput='get_quantity'
+            data-index="{{index}}" />
+        </view>
+        <view class="input">
+          <text class="name">加工价格</text>
+          <input type="number" placeholder="加工价格" value="{{item.price}}" bindinput='get_price' data-index="{{index}}" />
+        </view>
+        <view class="textarea">
+          <textarea bindinput='get_remarks' value='{{item.remarks}}' placeholder="备注" maxlength='1000'
+            data-index="{{index}}"> </textarea>
+          <view>{{item.cursor||'0'}} / 1000</view>
+        </view>
+      </view>
+      <view class="border"></view>
+    </view>
+    <view class="bom">
+      <view class="select">
+        <picker bindchange="bindFactorySelect" range="{{plants}}" range-key='factory_name'>
+          <view class="picker"> 新增指派工厂 </view>
+        </picker>
+      </view>
+      <view class="btn" bindtap='Confirm_scheduling' wx:if='{{produce_factory_order_length>0}}'>确认排单</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view wx:if='{{active==0}}'>
+  <view class="table" wx:if='{{active_set==false}}'>
+    <view class="table_list" wx:for='{{table}}' wx:key='index'>
+      <view class="list">
+        <view class="value">
+          <text class="name">指派工厂</text>
+          <view>{{item.factory_name}}</view>
+        </view>
+        <view class="value">
+          <text class="name">指派方式</text>
+          <view>{{item.mode_name}}</view>
+        </view>
+        <view class="value">
+          <text class="name">指派数量</text>
+          <view>{{item.quantity}}</view>
+        </view>
+        <view class="value">
+          <text class="name">加工价格</text>
+          <view>{{item.price}}</view>
+        </view>
+        <view class="value">
+          <text class="name">备注</text>
+          <view>{{item.remarks}}</view>
+        </view>
+      </view>
+      <view class="border"></view>
+    </view>
+    <view class="next_step" bindtap='table_edit'>修改</view>
+  </view>
+  <view class="edit_form" wx:if='{{active_set==true}}'>
+    <view class="form" wx:for='{{produce_factory_order}}' wx:key='index'>
+      <view class="form_con">
+        <view class="value">
+          <text class="name">指派方式</text>
+          <view>{{item.factory_name}}</view>
+        </view>
+        <view class="select">
+          <picker bindchange="bindModesSelect" value="{{item.mode}}" range="{{item.modes}}" range-key='mode_name'
+            data-index="{{index}}">
+            <view class="picker">
+              <text class="name">指派工厂</text>
+              <view class="con">
+                <view wx:if='{{!item.mode}}' style="color: #808080;">
+                  {{'指派工厂'}}
+                </view>
+                <view wx:if='{{item.mode}}'>
+                  {{item.mode_name}}
+                </view>
+                <view class="iconfont icon-icon-test3"></view>
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="input">
+          <text class="name">指派数量</text>
+          <input type="number" placeholder="指派数量" value="{{item.quantity}}" bindinput='get_quantity'
+            data-index="{{index}}" />
+        </view>
+        <view class="input">
+          <text class="name">加工价格</text>
+          <input type="number" placeholder="加工价格" value="{{item.price}}" bindinput='get_price' data-index="{{index}}" />
+        </view>
+        <view class="textarea">
+          <textarea bindinput='get_remarks' value='{{item.remarks}}' placeholder="备注" maxlength='1000'
+            data-index="{{index}}"> </textarea>
+          <view>{{item.cursor||'0'}} / 1000</view>
+        </view>
+      </view>
+      <view class="border"></view>
+    </view>
+    <view class="bom">
+      <view class="select">
+        <picker bindchange="bindFactorySelect_edit" range="{{plants}}" range-key='factory_name'>
+          <view class="picker"> 新增指派工厂 </view>
+        </picker>
+      </view>
+      <view class="btn" bindtap='Confirm_scheduling_edit' wx:if='{{produce_factory_order_length>0}}'>确认排单</view>
+    </view>
+  </view>
+</view>

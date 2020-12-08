@@ -1,5 +1,5 @@
 <tabBar></tabBar>
-<view wx:if="{{productionOrders}}">
+<view wx:if="{{purchase}}">
   <view class="main">
     <view class="search_input">
       <input bindinput='handleSearchInput' value="{{styleno}}" placeholder="搜索款号">
@@ -23,11 +23,11 @@
           <view>{{item.style_type}}</view>
         </view>
       </view>
-      <view wx:if='{{produce_info}}'>
-        <view class="listRight" wx:if='{{item.order_status==0&&produce_info}}'>
-          下单
+      <view wx:if="{{produce_info}}">
+        <view class="listRight" wx:if='{{item.procure_status==0&&produce_order_procure_add}}'>
+          采购
         </view>
-        <view class="listRight" wx:if='{{item.order_status==1}}'>
+        <view class="listRight" wx:if='{{item.procure_status==1&&item.procure_status==2}}'>
           查看
         </view>
       </view>
@@ -47,20 +47,20 @@
           <view>{{item.style_type}}</view>
         </view>
       </view>
-      <view wx:if='{{produce_info}}'>
-        <view class="listRight" wx:if='{{item.order_status==0&&produce_info}}'>
-          下单
+      <view wx:if="{{produce_info}}">
+        <view class="listRight" wx:if='{{item.procure_status==0&&produce_order_procure_add}}'>
+          采购
         </view>
-        <view class="listRight" wx:if='{{item.order_status==1}}'>
+        <view class="listRight" wx:if='{{item.procure_status==1||item.procure_status==2}}'>
           查看
         </view>
       </view>
     </view>
   </view>
 
-  <view class="newProject" bindtap='newProject' wx:if="{{produce_lotadd}}">
+  <!-- <view class="newProject" bindtap='newProject'>
     <view class="icon-increase iconfont">
     </view>
-  </view>
+  </view> -->
 </view>
 <!-- <text>功能正在开发中...</text> -->

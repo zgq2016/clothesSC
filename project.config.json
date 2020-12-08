@@ -38,7 +38,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
-  "appid": "wx5d4249c14934b4c8",
+  "appid": "wxd4ffb13f8a68b617",
   "projectname": "clothesSC",
   "debugOptions": {
     "hidedInDevtools": []
@@ -62,7 +62,31 @@
         {
           "name": "生产下单",
           "pathName": "pages/sc_Order_information/index",
-          "query": "style_id=172&produce_no=2020112867206",
+          "query": "style_id=172&produce_no=2020112877095",
+          "scene": null
+        },
+        {
+          "name": "生产采购",
+          "pathName": "pages/sc_purchase/index",
+          "query": "style_id=172&produce_no=2020112877095",
+          "scene": null
+        },
+        {
+          "name": "生产排单",
+          "pathName": "pages/sc_materialPurchasing/index",
+          "query": "style_id=205&produce_no=2020112803463",
+          "scene": null
+        },
+        {
+          "name": "裁剪",
+          "pathName": "pages/sc_tailor/index",
+          "query": "style_id=172&produce_no=2020112877095",
+          "scene": null
+        },
+        {
+          "name": "生产出货",
+          "pathName": "pages/sc_shipment/index",
+          "query": "style_id=172&produce_no=2020112877095",
           "scene": null
         }
       ]

@@ -4,7 +4,7 @@
     <view class="con">
       <view wx:for='{{sizes}}' wx:key='id'>
         <checkbox-group bindchange='handleCheck' data-item="{{item}}">
-          <checkbox class="assist_list">{{item.size_name}}</checkbox>
+          <checkbox class="assist_list" checked="{{item.checked}}">{{item.size}}</checkbox>
         </checkbox-group>
       </view>
     </view>
@@ -18,7 +18,7 @@
     </view>
     <view wx:for='{{sizes}}' wx:key='id'>
       <view class="size_list" wx:if='{{item.checked}}'>
-        <view class="size">{{item.size_name}}</view>
+        <view class="size">{{item.size}}</view>
         <view class="num">
           <input bindinput='get_ratio' data-index="{{index}}" value="{{item.ratio}}" placeholder="请输入" type="number" />
         </view>

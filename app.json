@@ -1,10 +1,21 @@
 {
   "pages": [
-    "pages/aa/index",
-    "pages/sc_Order_information/index",
-    "pages/get_size/index",
     "pages/homePage/index",
+    
+    "pages/sc_Order_information/index",
+    "pages/sc_purchase/index",
+    "pages/sc_materialPurchasing/index",
+    "pages/sc_tailor/index",
+    "pages/sc_shipment/index",
+
     "pages/The_production_order/index",
+    "pages/Production_procurement/index",
+    "pages/production_arranged/index",
+    "pages/tailor/index",
+    "pages/shipment/index",
+
+    "pages/aa/index",
+    "pages/get_size/index",
     "pages/designFile/index",
     "pages/functionality/index",
     "pages/mine/index",

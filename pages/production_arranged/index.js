@@ -8,8 +8,9 @@ Page({
     switchover_active: false,
     imgwidth: "",
     imgheight: "",
-    productionOrders: "",
-    produce_lotadd: "",
+    productionScheduling: "",
+    produce_info: "",
+    produce_factory_order_add: "",
     permission: [],
   },
   QueryParams: {
@@ -21,12 +22,14 @@ Page({
   //options(Object)
   onLoad: function (options) {
     let permission = wx.getStorageSync("permission").split(",");
-    let productionOrders = permission.indexOf("productionOrders") != -1;
-    let produce_lotadd = permission.indexOf("produce_lotadd") != -1;
+    let productionScheduling = permission.indexOf("productionScheduling") != -1;
+    let produce_info = permission.indexOf("produce_info") != -1;
+    let produce_factory_order_add = permission.indexOf("produce_factory_order_add") != -1;
     this.setData({
       permission,
-      productionOrders,
-      produce_lotadd,
+      productionScheduling,
+      produce_info,
+      produce_factory_order_add,
     });
   },
 
@@ -34,10 +37,9 @@ Page({
     navigateTo(`/pages/designFile/index`);
   },
   go_production_files(e) {
-    console.log(e.currentTarget.dataset.item);
     let item = e.currentTarget.dataset.item;
     navigateTo(
-      `/pages/sc_Order_information/index?style_id=${item.style_id}&produce_no=${item.produce_no}`
+      `/pages/sc_materialPurchasing/index?style_id=${item.style_id}&produce_no=${item.produce_no}`
     );
   },
   handleSearchInput(e) {
@@ -58,7 +60,7 @@ Page({
 
     if (this.QueryParams["styleno"] == undefined) {
       let res = await request({
-        url: "get_produce_list",
+        url: "get_produce_factory_list",
         method: "post",
         data: this.QueryParams,
       });
@@ -71,7 +73,7 @@ Page({
     }
     if (this.QueryParams["styleno"] != undefined) {
       let res = await request({
-        url: "get_produce_list",
+        url: "get_produce_factory_list",
         method: "post",
         data: this.QueryParams,
       });
